@@ -42,6 +42,10 @@ The [science guide](science/README.md) connects the complete account.
 
 The proof combines a finite Esscher-response witness with the established O'Donnell–Wright mixedness bound. It compares fully Haar-oriented and block-commuting priors with identical supplied spectra. Both input ensembles remain difficult to distinguish from a maximally mixed reference at sublinear copy count, while their updated states have different expectation values of one known observable. No typical-input concentration or dimension-dependent accuracy limit is needed.
 
+## Learn the argument
+
+The selected educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. The [learning guide](learning/README.md) connects the task to the [source bridge](learning/WATROUS_BRIDGE.md) and the [30-milestone map](learning/MILESTONES.md). The route develops 12 background milestones and 18 narrative milestones, moving from states and copy access to the complete same-spectrum argument and its constructive comparisons. The bridge includes a complete one-qubit example distinguishing exponential updating from ordinary filtering.
+
 ## Reproduce the finite checks
 
 The [verification guide](verification/README.md) gives pinned dependencies, commands, expected results and scope. The diagnostics compare independent matrix formulas, exact qubit integration, same-spectrum controls, finite-tilt constants and selected Haar averages. Their [figure](verification/finite_diagnostics.png) summarizes the finite experiments. The analytical proofs establish the uniform lower bound.
