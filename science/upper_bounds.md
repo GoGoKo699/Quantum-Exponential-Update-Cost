@@ -10,13 +10,13 @@ Let $`D`$ be the Hilbert-space dimension and assume known constants $`0\lt c\leq
 \frac{c}{D}I\preceq\rho\preceq\frac{C}{D}I.
 ```
 
-Let $`H`$ be a supplied classical description of a Hermitian matrix with $`\|H\|_\infty\leq h`$. In the lower-bound example, $`H`$ is a fixed multiple of a known one-qubit Pauli operator, so its description and implementation do not grow with $`D`$ apart from identifying the register. Define
+Let $`H`$ be a supplied classical description of a Hermitian matrix with $`\Vert H\Vert _\infty\leq h`$. In the lower-bound example, $`H`$ is a fixed multiple of a known one-qubit Pauli operator, so its description and implementation do not grow with $`D`$ apart from identifying the register. Define
 
 ```math
 \mathcal T_H(\rho)=\frac{\exp(\log\rho+H)}{\mathrm{Tr}\exp(\log\rho+H)}.
 ```
 
-Trace distance means $`\tfrac12\|A-B\|_1`$. The final physical state includes averaging over the algorithm's measurement outcomes and classical randomness. No preparation circuit for the unknown source, inverse circuit, modular Hamiltonian, eigenbasis or QRAM is supplied.
+Trace distance means $`\tfrac12\Vert A-B\Vert _1`$. The final physical state includes averaging over the algorithm's measurement outcomes and classical randomness. No preparation circuit for the unknown source, inverse circuit, modular Hamiltonian, eigenbasis or QRAM is supplied.
 
 A bound $`R`$ on the ordinary eigenvalue ratio also implies the displayed promise with $`c=1/R`$ and $`C=R`$. These are not inverse-minimum-eigenvalue bounds independent of $`D`$.
 
@@ -25,17 +25,17 @@ A bound $`R`$ on the ordinary eigenvalue ratio also implies the displayed promis
 **Lemma.** If $`\rho`$ and $`\sigma`$ both satisfy the displayed spectral promise, then
 
 ```math
-\|\mathcal T_H(\rho)-\mathcal T_H(\sigma)\|_1
-\leq L\|\rho-\sigma\|_1,
+\Vert \mathcal T_H(\rho)-\mathcal T_H(\sigma)\Vert _1
+\leq L\Vert \rho-\sigma\Vert _1,
 \qquad L=2(C/c)e^{2h}.
 ```
 
 **Proof.** The resolvent formula for the logarithm gives
 
 ```math
-\|\log\rho-\log\sigma\|_1
-\leq\int_0^\infty\frac{\|\rho-\sigma\|_1}{(c/D+t)^2}\,dt
-=\frac{D}{c}\|\rho-\sigma\|_1.
+\Vert \log\rho-\log\sigma\Vert _1
+\leq\int_0^\infty\frac{\Vert \rho-\sigma\Vert _1}{(c/D+t)^2}\,dt
+=\frac{D}{c}\Vert \rho-\sigma\Vert _1.
 ```
 
 Put $`A=\log\rho+H`$ and $`B=\log\sigma+H`$. Both have largest eigenvalue at most $`\log(C/D)+h`$. The identity
@@ -47,15 +47,15 @@ e^A-e^B=\int_0^1e^{(1-s)A}(A-B)e^{sB}\,ds
 and the ideal property of the trace norm therefore imply
 
 ```math
-\|e^A-e^B\|_1\leq\frac{Ce^h}{D}\|A-B\|_1
-\leq(C/c)e^h\|\rho-\sigma\|_1.
+\Vert e^A-e^B\Vert _1\leq\frac{Ce^h}{D}\Vert A-B\Vert _1
+\leq(C/c)e^h\Vert \rho-\sigma\Vert _1.
 ```
 
 The normalizing traces are in $`[e^{-h},e^h]`$, by eigenvalue monotonicity applied to $`\log\rho-hI\preceq A\preceq\log\rho+hI`$ and its counterpart for $`B`$. For positive matrices $`X,Y`$ with $`\mathrm{Tr}X\geq e^{-h}`$,
 
 ```math
-\left\|\frac X{\mathrm{Tr}X}-\frac Y{\mathrm{Tr}Y}\right\|_1
-\leq2e^h\|X-Y\|_1.
+\left\Vert \frac X{\mathrm{Tr}X}-\frac Y{\mathrm{Tr}Y}\right\Vert _1
+\leq2e^h\Vert X-Y\Vert _1.
 ```
 
 Combining these inequalities proves the claim. No commutativity is used. $`\square`$
@@ -68,10 +68,10 @@ Let
 \mathcal K=\{\tau:\mathrm{Tr}\tau=1,\ (c/D)I\preceq\tau\preceq(C/D)I\}.
 ```
 
-Given a Hermitian estimate $`A`$, choose $`\widehat\rho\in\mathcal K`$ minimizing $`\|\widehat\rho-A\|_1`$. Because the true state is feasible,
+Given a Hermitian estimate $`A`$, choose $`\widehat\rho\in\mathcal K`$ minimizing $`\Vert \widehat\rho-A\Vert _1`$. Because the true state is feasible,
 
 ```math
-\|\widehat\rho-\rho\|_1\leq2\|A-\rho\|_1.
+\Vert \widehat\rho-\rho\Vert _1\leq2\Vert A-\rho\Vert _1.
 ```
 
 This is a finite classical optimization: diagonalize $`A`$, then minimize $`\sum_i|x_i-a_i|`$ subject to $`c/D\leq x_i\leq C/D`$ and $`\sum_i x_i=1`$. A minimizer can be chosen in this eigenbasis. Indeed, pinching any feasible matrix in that basis preserves the spectral bounds and trace and cannot increase its trace-norm distance from $`A`$.
@@ -83,13 +83,13 @@ This projection is used to ensure that a rare inaccurate tomography outcome neve
 O'Donnell and Wright's tomography estimator $`A`$ is a density matrix and obeys
 
 ```math
-\mathbb E\|A-\rho\|_F^2\leq\frac{4D-3}{N}.
+\mathbb E\Vert A-\rho\Vert _F^2\leq\frac{4D-3}{N}.
 ```
 
 Consequently,
 
 ```math
-\mathbb E\|\widehat\rho-\rho\|_1
+\mathbb E\Vert \widehat\rho-\rho\Vert _1
 \leq2\sqrt{\frac{D(4D-3)}{N}}
 \leq\frac{4D}{\sqrt N}.
 ```
@@ -116,7 +116,7 @@ X=(D+1)|\phi\rangle\langle\phi|-I,
 The Clifford second-moment identity supplies unbiasedness. Also $`\mathrm{Tr}X^2=D^2+D-1`$ for every outcome, so the empirical average $`A=N^{-1}\sum_jX_j`$ satisfies
 
 ```math
-\mathbb E\|A-\rho\|_F^2\leq\frac{D^2+D-1}{N}.
+\mathbb E\Vert A-\rho\Vert _F^2\leq\frac{D^2+D-1}{N}.
 ```
 
 After the same spectral projection and classical update calculation, the averaged ideal output has trace-distance error at most

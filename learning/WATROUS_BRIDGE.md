@@ -124,7 +124,7 @@ Measuring $`Z`$ on either ideal output gives outcomes $`+1`$ and $`-1`$. Their p
 For qubit states, half trace distance is half the Euclidean distance between their Bloch vectors. Here it is
 
 ```math
-\frac12\|\mathcal E_H(\rho)-\mathcal F_H(\rho)\|_1
+\frac12\Vert \mathcal E_H(\rho)-\mathcal F_H(\rho)\Vert _1
 \approx0.013549898359.
 ```
 
@@ -156,7 +156,7 @@ This qubit example illustrates the difference between the maps. It is **not** th
 The project uses
 
 ```math
-T(\sigma,\tau)=\frac12\|\sigma-\tau\|_1.
+T(\sigma,\tau)=\frac12\Vert \sigma-\tau\Vert _1.
 ```
 
 For equal-prior binary discrimination, Watrous's Holevo–Helstrom theorem gives

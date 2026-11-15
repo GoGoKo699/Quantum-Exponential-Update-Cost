@@ -45,7 +45,7 @@ We use Haar-random $`U`$ only as a lower-bound distribution. An update algorithm
 
 ## Uniform control of the finite update
 
-**Lemma 1 (partition-function derivatives).** Let $`A`$ and $`Z`$ be finite-dimensional Hermitian matrices with $`\|Z\|\le1`$, and put
+**Lemma 1 (partition-function derivatives).** Let $`A`$ and $`Z`$ be finite-dimensional Hermitian matrices with $`\Vert Z\Vert \le1`$, and put
 
 ```math
 F(t)=\mathrm{Tr}e^{A+tZ},\qquad m(t)=\frac{F'(t)}{F(t)}.
@@ -73,7 +73,7 @@ F^{(k)}(t)=k!\int_{\Delta_k}
 where $`\Delta_k=\{(s_0,\ldots,s_k):s_j\ge0,\sum_js_j=1\}`$ has volume $`1/k!`$ in the usual $`k`$ independent coordinates. Schatten Holder bounds every integrand in magnitude by
 
 ```math
-\prod_{j=0}^k\|e^{s_jK}\|_{1/s_j}\,\|Z\|^k
+\prod_{j=0}^k\Vert e^{s_jK}\Vert _{1/s_j}\,\Vert Z\Vert ^k
 \le\prod_{j=0}^k(\mathrm{Tr}e^K)^{s_j}
 =F(t).
 ```
@@ -217,7 +217,7 @@ For the fixed choices $`a=4/5`$ and $`h=1/10`$,
 g_*:=g(4/5,1/10)
 =\frac1{10}\left(\frac12-\frac{4}{5\log9}\right)
 -\frac7{1500}
->0.0089237.
+\gt 0.0089237.
 ```
 
 This bound holds at every even dimension. It is a gap between the maximally mixed output response and the Haar-averaged alternative response. The proof does not require an individual-typical-input statement or a concentration theorem.

@@ -32,7 +32,7 @@ For the theorem's $`H=0.1Z_1`$, the filter is diagonal on one qubit. A controlle
 Numerically, five attempts have failure probability
 
 ```math
-(1-e^{-0.2})^5<0.000196<0.001.
+(1-e^{-0.2})^5\lt 0.000196\lt 0.001.
 ```
 
 The ideal-gate five-copy statement is exact. A hardware implementation allocates the available accuracy slack to its flag rotation and measurements.

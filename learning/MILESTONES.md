@@ -53,7 +53,7 @@ The allocation is **12 background milestones and 18 narrative milestones**. The 
 ### M05 — Output error and the ability to distinguish states
 
 - **Central question:** What operational change can a small half trace distance permit?
-- **Understanding target:** Use the convention $`T(\rho,\sigma)=\|\rho-\sigma\|_1/2`$. Explain why a norm-one observable changes by at most $`2T`$, and why a channel cannot increase input trace distance.
+- **Understanding target:** Use the convention $`T(\rho,\sigma)=\Vert \rho-\sigma\Vert _1/2`$. Explain why a norm-one observable changes by at most $`2T`$, and why a channel cannot increase input trace distance.
 - **Dependencies and story role:** Uses M02 and M04; supplies the error and information rules that later connect an output response to an input-copy obstruction.
 - **Conceptual connection:** Two output errors of size $`\epsilon`$ can reduce a response gap by $`4\epsilon`$; the factor follows from the stated distance convention.
 - **Source pointers:** Watrous, Chapter 3; [model: normalized update and error convention](../science/model.md#the-normalized-esscher-update); [converse: proof of the known-spectrum theorem](../science/copy_lower_bound.md#proof-of-the-known-spectrum-theorem).

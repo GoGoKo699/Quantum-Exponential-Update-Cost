@@ -5,7 +5,7 @@ An update algorithm receives independent copies of an unknown prior. It knows th
 We use half trace distance
 
 ```math
-T(\rho,\sigma)=\frac12\|\rho-\sigma\|_1.
+T(\rho,\sigma)=\frac12\Vert \rho-\sigma\Vert _1.
 ```
 
 The main statement concerns a hard worst-case copy budget. A protocol consuming at most $`n`$ copies, including an adaptive protocol, is represented by a quantum channel $`\Phi_n`$ on $`n`$ input copies: unused copies can be ignored. Known ancillas, measurements, randomness and classical control are included in that channel.
@@ -17,7 +17,7 @@ Fix a dimension $`D`$ divisible by four and the known balanced involution $`Z`$ 
 ```math
 \mathcal O_D(a)
 =\left\{\rho_U=\frac{I+aUZU^\dagger}{D}:U\in\mathsf U(D)\right\},
-\qquad 0<a<1.
+\qquad 0\lt a\lt 1.
 ```
 
 Every prior has exactly the same two eigenvalues, $`(1+a)/D`$ and $`(1-a)/D`$, each with multiplicity $`D/2`$. This spectrum may be given to the algorithm. Its eigenbasis is unknown.
@@ -72,7 +72,7 @@ n\ge\frac{g-4\epsilon}{5\sqrt2\,a^2}\,D.
 For $`a=4/5`$, $`h=1/10`$ and $`\epsilon=10^{-3}`$, this implies
 
 ```math
-n>10^{-3}D.
+n\gt 10^{-3}D.
 ```
 
 Every input is full rank with eigenvalue ratio $`9`$, its spectrum is known, and the evidence norm is $`1/10`$. All constants are independent of $`D`$. For $`D=2^q`$ with $`q\ge2`$, this is an exponential copy cost in the number of input qubits.
@@ -296,7 +296,7 @@ The finite constants above belong to the hard-budget statements. The following r
 **Proof.** Fix $`\delta\gt 0`$ with $`\epsilon+\delta\lt g/4`$. Truncate the protocol after $`L=\lceil T/\delta\rceil`$ copies: if it requests another copy, output a fixed fallback state. Markov's inequality bounds that event by $`\delta`$ on every input. The truncated protocol has half trace output error at most $`\epsilon+\delta`$, so Theorem 1 gives $`L\ge cD`$, where
 
 ```math
-c=\frac{g-4(\epsilon+\delta)}{5\sqrt2\,a^2}>0.
+c=\frac{g-4(\epsilon+\delta)}{5\sqrt2\,a^2}\gt 0.
 ```
 
 Since $`L\le T/\delta+1`$, one obtains $`T\ge\delta(cD-1)`$. $`\square`$
@@ -314,7 +314,7 @@ The result is not a claim that every quantum update is expensive. The measuremen
 =\frac{e^{H/2}\rho e^{H/2}}{\mathrm{Tr}(e^H\rho)}
 ```
 
-has a direct probabilistic implementation with expected copy cost bounded in terms of $`\|H\|`$ alone. It is exactly $`\mathcal E_H(\rho)`$ whenever $`[\rho,H]=0`$, and implementing that filter does not require knowing the input eigenbasis. Classical exponential tilting similarly admits rejection sampling from the prior for known bounded evidence. The distinction established here is the copy cost of the noncommuting minimum-relative-entropy update.
+has a direct probabilistic implementation with expected copy cost bounded in terms of $`\Vert H\Vert `$ alone. It is exactly $`\mathcal E_H(\rho)`$ whenever $`[\rho,H]=0`$, and implementing that filter does not require knowing the input eigenbasis. Classical exponential tilting similarly admits rejection sampling from the prior for known bounded evidence. The distinction established here is the copy cost of the noncommuting minimum-relative-entropy update.
 
 The theorem gives a lower bound, not a matching general upper bound or an optimal dependence on output accuracy.
 
