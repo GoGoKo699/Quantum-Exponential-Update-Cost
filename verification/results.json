@@ -1,0 +1,1236 @@
+{
+  "scope": "Finite numerical diagnostics; analytical proofs supply universal claims. Monte Carlo standard errors use independent antithetic pairs as sampling units.",
+  "generated_at_utc": "2026-11-15T12:28:20.148990+00:00",
+  "seed": 2026111507,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "provenance": {
+    "script": "verification/checks.py",
+    "script_sha256": "d22c0d4ee896b8c0fae7cd0e940d02046d68ae42317136d057a832d94128b0c2",
+    "requirements_sha256": "815360a00e0e1d7a128cade3de11b66d3fe997cbd6e2c69f8081eb9bc8b88197"
+  },
+  "constants": {
+    "a": 0.8,
+    "h": 0.1,
+    "output_half_trace_error": 0.001,
+    "input_spectral_condition_number": 9.000000000000002,
+    "c_a": 0.8640956906507349,
+    "dimension_uniform_response_upper_bound": 0.09074290239840682,
+    "maximally_mixed_response": 0.09966799462495582,
+    "analytical_response_gap_lower_bound": 0.008923764268259844,
+    "response_gap_after_output_error_allowance": 0.004923764268259844,
+    "main_same_spectrum_copy_lower_bound": {
+      "scope": "D is a positive multiple of four; both ensembles have the supplied exact two-level spectrum.",
+      "conservative_coefficient_strict_lower_bound": 0.001,
+      "input_distance_exact_upper_bound_at_coefficient": 0.0016000005570561823,
+      "input_distance_relaxed_upper_bound_at_coefficient": 0.002262741699796952,
+      "output_distance_lower_bound_after_error": 0.002461882134129922,
+      "inherited_comparison_bound": "B_D(n)+2 B_(D/2)(n), B_d(n)=sqrt(expm1((n*a^2/d)^2))/2"
+    },
+    "maxmix_comparator_copy_lower_bound_coefficient": 0.007693335041231069,
+    "maxmix_comparator_conservative_display_coefficient": 0.00769,
+    "commuting_single_attempt_success_lower_bound": 0.8187307530779818,
+    "commuting_five_attempt_failure_upper_bound": 0.00019571344088502342
+  },
+  "qubit_quadrature": {
+    "coarse": {
+      "dimension": 2,
+      "method": "Gauss-Legendre integration of uniform Bloch axis",
+      "quadrature_order": 96,
+      "mean_esscher_response": 0.060498227976929234,
+      "mean_sandwich_response": 0.07853603710242066,
+      "mean_susceptibility": 0.6054609208676474,
+      "exact_haar_susceptibility": 0.6054609208676465,
+      "haar_second_moments": {
+        "diagonal_second_moment": 0.333333333333331,
+        "offdiagonal_second_moment": 0.666666666666669,
+        "initial_magnetization_second_moment": 0.21333333333333182
+      },
+      "exact_haar_second_moments": {
+        "diagonal_second_moment": 0.3333333333333333,
+        "offdiagonal_second_moment": 0.6666666666666666,
+        "initial_magnetization_second_moment": 0.21333333333333337
+      },
+      "sampling_standard_error": null
+    },
+    "refined": {
+      "dimension": 2,
+      "method": "Gauss-Legendre integration of uniform Bloch axis",
+      "quadrature_order": 192,
+      "mean_esscher_response": 0.060498227976928914,
+      "mean_sandwich_response": 0.07853603710242003,
+      "mean_susceptibility": 0.6054609208676439,
+      "exact_haar_susceptibility": 0.6054609208676465,
+      "haar_second_moments": {
+        "diagonal_second_moment": 0.3333333333333406,
+        "offdiagonal_second_moment": 0.6666666666666594,
+        "initial_magnetization_second_moment": 0.21333333333333798
+      },
+      "exact_haar_second_moments": {
+        "diagonal_second_moment": 0.3333333333333333,
+        "offdiagonal_second_moment": 0.6666666666666666,
+        "initial_magnetization_second_moment": 0.21333333333333337
+      },
+      "sampling_standard_error": null
+    },
+    "response_refinement_difference": 3.191891195797325e-16,
+    "caveat": "Refinement agreement is a numerical check, not a certified integration bound."
+  },
+  "haar_diagnostics": [
+    {
+      "dimension": 4,
+      "independent_haar_draws": 2400,
+      "antithetic_orientations_evaluated": 4800,
+      "method": "Seeded complex-Gaussian QR; J-conjugate antithetic response",
+      "summary": {
+        "esscher_response": {
+          "mean": 0.08112906820111325,
+          "standard_error": 0.00017635087195055874
+        },
+        "sandwich_response": {
+          "mean": 0.09549419975561275,
+          "standard_error": 0.00012684719745189175
+        },
+        "susceptibility": {
+          "mean": 0.8132033332859133,
+          "standard_error": 0.001776961762294252
+        },
+        "diagonal_second_moment": {
+          "mean": 0.19847387237570652,
+          "standard_error": 0.0026314649001663386
+        },
+        "offdiagonal_second_moment": {
+          "mean": 0.2671753758747645,
+          "standard_error": 0.0008771549667221126
+        },
+        "initial_magnetization_second_moment": {
+          "mean": 0.04224011748000669,
+          "standard_error": 0.0012823931985032888
+        }
+      },
+      "exact_haar_predictions": {
+        "susceptibility": 0.8123687366941171,
+        "diagonal_second_moment": 0.2,
+        "offdiagonal_second_moment": 0.26666666666666666,
+        "initial_magnetization_second_moment": 0.04266666666666667
+      },
+      "diagnostic_standardized_residuals": {
+        "susceptibility": 0.46967616833725945,
+        "diagonal_second_moment": -0.5799536312253397,
+        "offdiagonal_second_moment": 0.5799536312253187,
+        "initial_magnetization_second_moment": -0.3326196576508827
+      },
+      "maximum_initial_pair_magnetization": 0.0,
+      "maximum_logrho_scalar_cancellation_residual": 4.129419928941355e-15,
+      "maximum_half_trace_difference_log_vs_shifted_exponent": 7.212788300945278e-16,
+      "smallest_checked_input_eigenvalue": 0.04999999999999963,
+      "maximum_checked_input_condition_number": 9.000000000000068,
+      "tilt_is_first_qubit_z": true
+    },
+    {
+      "dimension": 8,
+      "independent_haar_draws": 1600,
+      "antithetic_orientations_evaluated": 3200,
+      "method": "Seeded complex-Gaussian QR; J-conjugate antithetic response",
+      "summary": {
+        "esscher_response": {
+          "mean": 0.08504044200400683,
+          "standard_error": 7.054725527503515e-05
+        },
+        "sandwich_response": {
+          "mean": 0.09873780774899943,
+          "standard_error": 3.219793569737621e-05
+        },
+        "susceptibility": {
+          "mean": 0.8526278400206411,
+          "standard_error": 0.0007106214178442276
+        },
+        "diagonal_second_moment": {
+          "mean": 0.11141442024641676,
+          "standard_error": 0.0013174382101944697
+        },
+        "offdiagonal_second_moment": {
+          "mean": 0.12694079710765474,
+          "standard_error": 0.00018820545859920995
+        },
+        "initial_magnetization_second_moment": {
+          "mean": 0.009423921676766023,
+          "standard_error": 0.00032612572421965205
+        }
+      },
+      "exact_haar_predictions": {
+        "susceptibility": 0.8517797492324926,
+        "diagonal_second_moment": 0.1111111111111111,
+        "offdiagonal_second_moment": 0.12698412698412698,
+        "initial_magnetization_second_moment": 0.01015873015873016
+      },
+      "diagnostic_standardized_residuals": {
+        "susceptibility": 1.1934495173552748,
+        "diagonal_second_moment": 0.23022645992701632,
+        "offdiagonal_second_moment": -0.23022645992701632,
+        "initial_magnetization_second_moment": -2.253144807029172
+      },
+      "maximum_initial_pair_magnetization": 0.0,
+      "maximum_logrho_scalar_cancellation_residual": 8.14395720043218e-15,
+      "maximum_half_trace_difference_log_vs_shifted_exponent": 1.3244044699071767e-15,
+      "smallest_checked_input_eigenvalue": 0.02499999999999976,
+      "maximum_checked_input_condition_number": 9.000000000000087,
+      "tilt_is_first_qubit_z": true
+    },
+    {
+      "dimension": 16,
+      "independent_haar_draws": 900,
+      "antithetic_orientations_evaluated": 1800,
+      "method": "Seeded complex-Gaussian QR; J-conjugate antithetic response",
+      "summary": {
+        "esscher_response": {
+          "mean": 0.08582427258231828,
+          "standard_error": 4.350596262483891e-05
+        },
+        "sandwich_response": {
+          "mean": 0.09941635891979843,
+          "standard_error": 1.1774644575667067e-05
+        },
+        "susceptibility": {
+          "mean": 0.8605409907363016,
+          "standard_error": 0.00043808199012104217
+        },
+        "diagonal_second_moment": {
+          "mean": 0.05910883832373819,
+          "standard_error": 0.0006899028241264798
+        },
+        "offdiagonal_second_moment": {
+          "mean": 0.06272607744508411,
+          "standard_error": 4.599352160843201e-05
+        },
+        "initial_magnetization_second_moment": {
+          "mean": 0.0025498792588513532,
+          "standard_error": 0.00011930592703821125
+        }
+      },
+      "exact_haar_predictions": {
+        "susceptibility": 0.8610529286532869,
+        "diagonal_second_moment": 0.058823529411764705,
+        "offdiagonal_second_moment": 0.06274509803921569,
+        "initial_magnetization_second_moment": 0.002509803921568628
+      },
+      "diagnostic_standardized_residuals": {
+        "susceptibility": -1.1685892790155086,
+        "diagonal_second_moment": 0.4135494188398657,
+        "offdiagonal_second_moment": -0.41354941883999624,
+        "initial_magnetization_second_moment": 0.3359039930169602
+      },
+      "maximum_initial_pair_magnetization": 7.632783294297951e-17,
+      "maximum_logrho_scalar_cancellation_residual": 1.2055836401919893e-14,
+      "maximum_half_trace_difference_log_vs_shifted_exponent": 1.807694674628218e-15,
+      "smallest_checked_input_eigenvalue": 0.012499999999999878,
+      "maximum_checked_input_condition_number": 9.000000000000092,
+      "tilt_is_first_qubit_z": true
+    },
+    {
+      "dimension": 32,
+      "independent_haar_draws": 400,
+      "antithetic_orientations_evaluated": 800,
+      "method": "Seeded complex-Gaussian QR; J-conjugate antithetic response",
+      "summary": {
+        "esscher_response": {
+          "mean": 0.08607849971684056,
+          "standard_error": 3.152908042368711e-05
+        },
+        "sandwich_response": {
+          "mean": 0.09960327272287582,
+          "standard_error": 4.855710520125046e-06
+        },
+        "susceptibility": {
+          "mean": 0.8631070902963827,
+          "standard_error": 0.00031741395493310644
+        },
+        "diagonal_second_moment": {
+          "mean": 0.030349234696045578,
+          "standard_error": 0.00036986307065931266
+        },
+        "offdiagonal_second_moment": {
+          "mean": 0.031279056945288854,
+          "standard_error": 1.1931066795461694e-05
+        },
+        "initial_magnetization_second_moment": {
+          "mean": 0.0006558765349795623,
+          "standard_error": 4.920535636406811e-05
+        }
+      },
+      "exact_haar_predictions": {
+        "susceptibility": 0.8633372309153006,
+        "diagonal_second_moment": 0.030303030303030304,
+        "offdiagonal_second_moment": 0.03128054740957967,
+        "initial_magnetization_second_moment": 0.0006256109481915935
+      },
+      "diagnostic_standardized_residuals": {
+        "susceptibility": -0.7250488371451967,
+        "diagonal_second_moment": 0.1249229692840404,
+        "offdiagonal_second_moment": -0.12492296928392789,
+        "initial_magnetization_second_moment": 0.6150872389590104
+      },
+      "maximum_initial_pair_magnetization": 8.326672684688674e-17,
+      "maximum_logrho_scalar_cancellation_residual": 1.428992805027719e-14,
+      "maximum_half_trace_difference_log_vs_shifted_exponent": 2.300603296713782e-15,
+      "smallest_checked_input_eigenvalue": 0.006249999999999925,
+      "maximum_checked_input_condition_number": 9.000000000000119,
+      "tilt_is_first_qubit_z": true
+    }
+  ],
+  "known_spectrum_commuting_controls": [
+    {
+      "dimension": 4,
+      "independent_block_haar_draws": 32,
+      "ensemble": "Independent balanced Haar involutions within the two known Z blocks",
+      "spectrum": {
+        "lower_eigenvalue": 0.04999999999999999,
+        "upper_eigenvalue": 0.45,
+        "multiplicity_each": 2
+      },
+      "mean_response": 0.0996679946249559,
+      "exact_response": 0.09966799462495582,
+      "maximum_absolute_initial_magnetization": 2.7755575615628914e-16,
+      "maximum_response_error": 6.38378239159465e-16,
+      "maximum_spectrum_error": 2.7755575615628914e-16,
+      "maximum_esscher_sandwich_half_trace_difference": 3.1540751139228446e-16
+    },
+    {
+      "dimension": 8,
+      "independent_block_haar_draws": 32,
+      "ensemble": "Independent balanced Haar involutions within the two known Z blocks",
+      "spectrum": {
+        "lower_eigenvalue": 0.024999999999999994,
+        "upper_eigenvalue": 0.225,
+        "multiplicity_each": 4
+      },
+      "mean_response": 0.09966799462495578,
+      "exact_response": 0.09966799462495582,
+      "maximum_absolute_initial_magnetization": 1.942890293094024e-16,
+      "maximum_response_error": 8.465450562766819e-16,
+      "maximum_spectrum_error": 2.498001805406602e-16,
+      "maximum_esscher_sandwich_half_trace_difference": 8.278851874755579e-16
+    },
+    {
+      "dimension": 16,
+      "independent_block_haar_draws": 32,
+      "ensemble": "Independent balanced Haar involutions within the two known Z blocks",
+      "spectrum": {
+        "lower_eigenvalue": 0.012499999999999997,
+        "upper_eigenvalue": 0.1125,
+        "multiplicity_each": 8
+      },
+      "mean_response": 0.09966799462495585,
+      "exact_response": 0.09966799462495582,
+      "maximum_absolute_initial_magnetization": 1.457167719820518e-16,
+      "maximum_response_error": 1.2351231148954867e-15,
+      "maximum_spectrum_error": 1.3877787807814457e-16,
+      "maximum_esscher_sandwich_half_trace_difference": 1.154169731539929e-15
+    },
+    {
+      "dimension": 32,
+      "independent_block_haar_draws": 32,
+      "ensemble": "Independent balanced Haar involutions within the two known Z blocks",
+      "spectrum": {
+        "lower_eigenvalue": 0.006249999999999999,
+        "upper_eigenvalue": 0.05625,
+        "multiplicity_each": 16
+      },
+      "mean_response": 0.09966799462495583,
+      "exact_response": 0.09966799462495582,
+      "maximum_absolute_initial_magnetization": 1.3183898417423734e-16,
+      "maximum_response_error": 1.4988010832439613e-15,
+      "maximum_spectrum_error": 7.632783294297951e-17,
+      "maximum_esscher_sandwich_half_trace_difference": 1.7806199053887587e-15
+    }
+  ],
+  "cumulant_diagnostics": {
+    "method": "5-by-5 block Duhamel exponential; derivatives through order four",
+    "analytical_bound": 26,
+    "scope": "Twelve finite examples check the implementation, not universal validity.",
+    "commuting_closed_form_maximum_error": 2.886579864025407e-15,
+    "maximum_observed_absolute_fourth_cumulant": 1.6120466290236608,
+    "cases": [
+      {
+        "dimension": 2,
+        "t": -0.3,
+        "duhamel_derivative_ratios": [
+          -0.8431267684762657,
+          0.9692081092445827,
+          -0.8353948789165813,
+          0.9619416113871089
+        ],
+        "fourth_log_partition_derivative": 0.5622055948894618
+      },
+      {
+        "dimension": 2,
+        "t": 0.0,
+        "duhamel_derivative_ratios": [
+          -0.7442471362265429,
+          0.9634348605365519,
+          -0.7370175405022132,
+          0.9553252683620498
+        ],
+        "fourth_log_partition_derivative": 0.5395585460439078
+      },
+      {
+        "dimension": 2,
+        "t": 0.1,
+        "duhamel_derivative_ratios": [
+          -0.7002590795745688,
+          0.9614283164332054,
+          -0.6933430302479214,
+          0.9530308519961109
+        ],
+        "fourth_log_partition_derivative": 0.4525686201321557
+      },
+      {
+        "dimension": 2,
+        "t": 0.7,
+        "duhamel_derivative_ratios": [
+          -0.29622970674730514,
+          0.9510785688547433,
+          -0.29310236427188724,
+          0.9412245211475309
+        ],
+        "fourth_log_partition_derivative": -1.164422837361734
+      },
+      {
+        "dimension": 4,
+        "t": -0.3,
+        "duhamel_derivative_ratios": [
+          0.22335912704506855,
+          0.8295469395346522,
+          0.22211674231199538,
+          0.7960932419367281
+        ],
+        "fourth_log_partition_derivative": -0.98510580277855
+      },
+      {
+        "dimension": 4,
+        "t": 0.0,
+        "duhamel_derivative_ratios": [
+          0.4394780952154529,
+          0.8441237103138078,
+          0.4291961579695584,
+          0.8131323808757027
+        ],
+        "fourth_log_partition_derivative": -0.34639330874685903
+      },
+      {
+        "dimension": 4,
+        "t": 0.1,
+        "duhamel_derivative_ratios": [
+          0.5019576690845976,
+          0.850168165846533,
+          0.48916932559808546,
+          0.820119661841257
+        ],
+        "fourth_log_partition_derivative": -0.14079906459407254
+      },
+      {
+        "dimension": 4,
+        "t": 0.7,
+        "duhamel_derivative_ratios": [
+          0.7671642303969012,
+          0.8894884078904042,
+          0.7452975627448083,
+          0.8652401003431744
+        ],
+        "fourth_log_partition_derivative": 0.40833024774844606
+      },
+      {
+        "dimension": 8,
+        "t": -0.3,
+        "duhamel_derivative_ratios": [
+          -0.2564946688668306,
+          0.9173078275919548,
+          -0.2523244808062925,
+          0.8998672815589001
+        ],
+        "fourth_log_partition_derivative": -1.1851519218336715
+      },
+      {
+        "dimension": 8,
+        "t": 0.0,
+        "duhamel_derivative_ratios": [
+          0.011754905132818325,
+          0.9146644444154598,
+          0.010701940131127394,
+          0.8967731885427608
+        ],
+        "fourth_log_partition_derivative": -1.6120466290236608
+      },
+      {
+        "dimension": 8,
+        "t": 0.1,
+        "duhamel_derivative_ratios": [
+          0.10283270433818943,
+          0.91495893361707,
+          0.10000318327293164,
+          0.89708315110843
+        ],
+        "fourth_log_partition_derivative": -1.5400682056968753
+      },
+      {
+        "dimension": 8,
+        "t": 0.7,
+        "duhamel_derivative_ratios": [
+          0.5694313035323747,
+          0.9270865969452113,
+          0.5580365275529563,
+          0.9108114242389772
+        ],
+        "fourth_log_partition_derivative": 0.03776899039588555
+      }
+    ]
+  },
+  "filter_controls": {
+    "commuting_endpoint_maximum_half_trace_error": 6.245004513516506e-17,
+    "noncommuting_sigma_x_counterexample": {
+      "alignment": 0.0,
+      "half_trace_distance": 0.013549898358870008,
+      "esscher_magnetization": 0.07266701205284931,
+      "sandwich_magnetization": 0.09966799462495579
+    },
+    "success_operator_squared_eigenvalues": [
+      0.8187307530779817,
+      1.0
+    ],
+    "interpretation": "A bounded filter implements the sandwich update; it equals the Esscher target on commuting inputs but fails at the stated error on this noncommuting qubit input."
+  },
+  "filter_counterexample_curve": [
+    {
+      "alignment": -1.0,
+      "half_trace_distance": 6.245004513516506e-17,
+      "esscher_magnetization": -0.7610107365772133,
+      "sandwich_magnetization": -0.7610107365772134
+    },
+    {
+      "alignment": -0.9833333333333333,
+      "half_trace_distance": 0.0025232301862701074,
+      "esscher_magnetization": -0.7464435928588067,
+      "sandwich_magnetization": -0.7454457073257859
+    },
+    {
+      "alignment": -0.9666666666666667,
+      "half_trace_distance": 0.0035518722299699105,
+      "esscher_magnetization": -0.7319006091288363,
+      "sandwich_magnetization": -0.7299255018801729
+    },
+    {
+      "alignment": -0.95,
+      "half_trace_distance": 0.004329852146079789,
+      "esscher_magnetization": -0.7173817106724356,
+      "sandwich_magnetization": -0.7144499268949547
+    },
+    {
+      "alignment": -0.9333333333333333,
+      "half_trace_distance": 0.004976189430114401,
+      "esscher_magnetization": -0.7028868230883938,
+      "sandwich_magnetization": -0.6990187901350972
+    },
+    {
+      "alignment": -0.9166666666666666,
+      "half_trace_distance": 0.005537203327163897,
+      "esscher_magnetization": -0.6884158722874988,
+      "sandwich_magnetization": -0.6836319004679918
+    },
+    {
+      "alignment": -0.9,
+      "half_trace_distance": 0.0060367537598689115,
+      "esscher_magnetization": -0.6739687844909066,
+      "sandwich_magnetization": -0.6682890678555646
+    },
+    {
+      "alignment": -0.8833333333333333,
+      "half_trace_distance": 0.006489074177983912,
+      "esscher_magnetization": -0.6595454862285082,
+      "sandwich_magnetization": -0.6529901033464525
+    },
+    {
+      "alignment": -0.8666666666666667,
+      "half_trace_distance": 0.0069034758730233976,
+      "esscher_magnetization": -0.6451459043373176,
+      "sandwich_magnetization": -0.637734819068246
+    },
+    {
+      "alignment": -0.85,
+      "half_trace_distance": 0.007286451548964547,
+      "esscher_magnetization": -0.6307699659598601,
+      "sandwich_magnetization": -0.6225230282197993
+    },
+    {
+      "alignment": -0.8333333333333334,
+      "half_trace_distance": 0.007642746062304846,
+      "esscher_magnetization": -0.6164175985425779,
+      "sandwich_magnetization": -0.6073545450636055
+    },
+    {
+      "alignment": -0.8166666666666667,
+      "half_trace_distance": 0.007975954108500573,
+      "esscher_magnetization": -0.6020887298342418,
+      "sandwich_magnetization": -0.5922291849182371
+    },
+    {
+      "alignment": -0.8,
+      "half_trace_distance": 0.008288877836348695,
+      "esscher_magnetization": -0.5877832878843757,
+      "sandwich_magnetization": -0.5771467641508508
+    },
+    {
+      "alignment": -0.7833333333333333,
+      "half_trace_distance": 0.0085837527642128,
+      "esscher_magnetization": -0.5735012010416866,
+      "sandwich_magnetization": -0.5621071001697553
+    },
+    {
+      "alignment": -0.7666666666666666,
+      "half_trace_distance": 0.00886239688018254,
+      "esscher_magnetization": -0.5592423979525102,
+      "sandwich_magnetization": -0.5471100114170437
+    },
+    {
+      "alignment": -0.75,
+      "half_trace_distance": 0.0091263126552006,
+      "esscher_magnetization": -0.545006807559262,
+      "sandwich_magnetization": -0.5321553173612883
+    },
+    {
+      "alignment": -0.7333333333333334,
+      "half_trace_distance": 0.009376758980642868,
+      "esscher_magnetization": -0.5307943590988987,
+      "sandwich_magnetization": -0.5172428384902935
+    },
+    {
+      "alignment": -0.7166666666666667,
+      "half_trace_distance": 0.00961480321868411,
+      "esscher_magnetization": -0.5166049821013886,
+      "sandwich_magnetization": -0.5023723963039165
+    },
+    {
+      "alignment": -0.7,
+      "half_trace_distance": 0.009841359707183799,
+      "esscher_magnetization": -0.5024386063881969,
+      "sandwich_magnetization": -0.4875438133069439
+    },
+    {
+      "alignment": -0.6833333333333333,
+      "half_trace_distance": 0.010057218799195692,
+      "esscher_magnetization": -0.4882951620707721,
+      "sandwich_magnetization": -0.47275691300202916
+    },
+    {
+      "alignment": -0.6666666666666667,
+      "half_trace_distance": 0.01026306913850464,
+      "esscher_magnetization": -0.47417457954904646,
+      "sandwich_magnetization": -0.45801151988269
+    },
+    {
+      "alignment": -0.65,
+      "half_trace_distance": 0.010459515005295874,
+      "esscher_magnetization": -0.4600767895099467,
+      "sandwich_magnetization": -0.4433074594263653
+    },
+    {
+      "alignment": -0.6333333333333333,
+      "half_trace_distance": 0.010647090005168213,
+      "esscher_magnetization": -0.4460017229259124,
+      "sandwich_magnetization": -0.4286445580875297
+    },
+    {
+      "alignment": -0.6166666666666667,
+      "half_trace_distance": 0.010826268002995828,
+      "esscher_magnetization": -0.43194931105342166,
+      "sandwich_magnetization": -0.41402264329086536
+    },
+    {
+      "alignment": -0.6,
+      "half_trace_distance": 0.010997471951369398,
+      "esscher_magnetization": -0.4179194854315282,
+      "sandwich_magnetization": -0.39944154342449184
+    },
+    {
+      "alignment": -0.5833333333333333,
+      "half_trace_distance": 0.01116108108942523,
+      "esscher_magnetization": -0.4039121778804096,
+      "sandwich_magnetization": -0.38490108783325266
+    },
+    {
+      "alignment": -0.5666666666666667,
+      "half_trace_distance": 0.01131743686559094,
+      "esscher_magnetization": -0.3899273204999185,
+      "sandwich_magnetization": -0.3704011068120566
+    },
+    {
+      "alignment": -0.55,
+      "half_trace_distance": 0.011466847850408609,
+      "esscher_magnetization": -0.3759648456681491,
+      "sandwich_magnetization": -0.35594143159927577
+    },
+    {
+      "alignment": -0.5333333333333333,
+      "half_trace_distance": 0.011609593842245598,
+      "esscher_magnetization": -0.36202468604000754,
+      "sandwich_magnetization": -0.3415218943701989
+    },
+    {
+      "alignment": -0.5166666666666666,
+      "half_trace_distance": 0.011745929322154468,
+      "esscher_magnetization": -0.34810677454579453,
+      "sandwich_magnetization": -0.32714232823053707
+    },
+    {
+      "alignment": -0.5,
+      "half_trace_distance": 0.011876086379507562,
+      "esscher_magnetization": -0.33421104438979377,
+      "sandwich_magnetization": -0.312802567209987
+    },
+    {
+      "alignment": -0.4833333333333334,
+      "half_trace_distance": 0.012000277203972967,
+      "esscher_magnetization": -0.32033742904887264,
+      "sandwich_magnetization": -0.2985024462558434
+    },
+    {
+      "alignment": -0.4666666666666667,
+      "half_trace_distance": 0.012118696219573299,
+      "esscher_magnetization": -0.306485862271088,
+      "sandwich_magnetization": -0.2842418012266671
+    },
+    {
+      "alignment": -0.44999999999999996,
+      "half_trace_distance": 0.012231521921352595,
+      "esscher_magnetization": -0.29265627807430167,
+      "sandwich_magnetization": -0.27002046888600506
+    },
+    {
+      "alignment": -0.43333333333333335,
+      "half_trace_distance": 0.012338918463377237,
+      "esscher_magnetization": -0.27884861074480527,
+      "sandwich_magnetization": -0.255838286896162
+    },
+    {
+      "alignment": -0.41666666666666663,
+      "half_trace_distance": 0.012441037037575615,
+      "esscher_magnetization": -0.2650627948359544,
+      "sandwich_magnetization": -0.24169509381202237
+    },
+    {
+      "alignment": -0.4,
+      "half_trace_distance": 0.012538017075652289,
+      "esscher_magnetization": -0.2512987651668052,
+      "sandwich_magnetization": -0.22759072907492567
+    },
+    {
+      "alignment": -0.3833333333333333,
+      "half_trace_distance": 0.012629987300557784,
+      "esscher_magnetization": -0.2375564568207691,
+      "sandwich_magnetization": -0.21352503300658898
+    },
+    {
+      "alignment": -0.3666666666666667,
+      "half_trace_distance": 0.012717066649361463,
+      "esscher_magnetization": -0.2238358051442657,
+      "sandwich_magnetization": -0.1994978468030832
+    },
+    {
+      "alignment": -0.35,
+      "half_trace_distance": 0.012799365085689348,
+      "esscher_magnetization": -0.21013674574539154,
+      "sandwich_magnetization": -0.1855090125288541
+    },
+    {
+      "alignment": -0.33333333333333337,
+      "half_trace_distance": 0.012876984316861375,
+      "esscher_magnetization": -0.19645921449259263,
+      "sandwich_magnetization": -0.17155837311079702
+    },
+    {
+      "alignment": -0.31666666666666665,
+      "half_trace_distance": 0.012950018428427506,
+      "esscher_magnetization": -0.18280314751334648,
+      "sandwich_magnetization": -0.1576457723323766
+    },
+    {
+      "alignment": -0.30000000000000004,
+      "half_trace_distance": 0.013018554446788524,
+      "esscher_magnetization": -0.1691684811928516,
+      "sandwich_magnetization": -0.1437710548277964
+    },
+    {
+      "alignment": -0.2833333333333333,
+      "half_trace_distance": 0.01308267283893675,
+      "esscher_magnetization": -0.15555515217272586,
+      "sandwich_magnetization": -0.12993406607621488
+    },
+    {
+      "alignment": -0.2666666666666667,
+      "half_trace_distance": 0.013142447956978377,
+      "esscher_magnetization": -0.14196309734971208,
+      "sandwich_magnetization": -0.11613465239600984
+    },
+    {
+      "alignment": -0.25,
+      "half_trace_distance": 0.0131979484339635,
+      "esscher_magnetization": -0.12839225387439196,
+      "sandwich_magnetization": -0.10237266093908803
+    },
+    {
+      "alignment": -0.2333333333333334,
+      "half_trace_distance": 0.013249237536589702,
+      "esscher_magnetization": -0.11484255914990671,
+      "sandwich_magnetization": -0.0886479396852426
+    },
+    {
+      "alignment": -0.21666666666666667,
+      "half_trace_distance": 0.013296373479547948,
+      "esscher_magnetization": -0.1013139508306855,
+      "sandwich_magnetization": -0.07496033743655417
+    },
+    {
+      "alignment": -0.19999999999999996,
+      "half_trace_distance": 0.013339409705597584,
+      "esscher_magnetization": -0.08780636682118376,
+      "sandwich_magnetization": -0.061309703811840144
+    },
+    {
+      "alignment": -0.18333333333333335,
+      "half_trace_distance": 0.013378395134881541,
+      "esscher_magnetization": -0.0743197452746277,
+      "sandwich_magnetization": -0.04769588924114693
+    },
+    {
+      "alignment": -0.16666666666666663,
+      "half_trace_distance": 0.013413374386500936,
+      "esscher_magnetization": -0.06085402459176337,
+      "sandwich_magnetization": -0.03411874496028572
+    },
+    {
+      "alignment": -0.15000000000000002,
+      "half_trace_distance": 0.013444387974948591,
+      "esscher_magnetization": -0.04740914341961944,
+      "sandwich_magnetization": -0.020578123005415616
+    },
+    {
+      "alignment": -0.1333333333333333,
+      "half_trace_distance": 0.013471472483632051,
+      "esscher_magnetization": -0.0339850406502723,
+      "sandwich_magnetization": -0.007073876207667473
+    },
+    {
+      "alignment": -0.1166666666666667,
+      "half_trace_distance": 0.01349466071740399,
+      "esscher_magnetization": -0.020581655419620204,
+      "sandwich_magnetization": 0.00639414181218767
+    },
+    {
+      "alignment": -0.09999999999999998,
+      "half_trace_distance": 0.013513981835740384,
+      "esscher_magnetization": -0.007198927106165542,
+      "sandwich_magnetization": 0.019826076649026914
+    },
+    {
+      "alignment": -0.08333333333333337,
+      "half_trace_distance": 0.013529461467963848,
+      "esscher_magnetization": 0.0061632046701958765,
+      "sandwich_magnetization": 0.033222073118623685
+    },
+    {
+      "alignment": -0.06666666666666665,
+      "half_trace_distance": 0.01354112181168929,
+      "esscher_magnetization": 0.0195048000493801,
+      "sandwich_magnetization": 0.04658227526285019
+    },
+    {
+      "alignment": -0.050000000000000044,
+      "half_trace_distance": 0.013548981715484808,
+      "esscher_magnetization": 0.032825918932310016,
+      "sandwich_magnetization": 0.05990682635484107
+    },
+    {
+      "alignment": -0.033333333333333326,
+      "half_trace_distance": 0.013553056746555756,
+      "esscher_magnetization": 0.046126620982105904,
+      "sandwich_magnetization": 0.07319586890411606
+    },
+    {
+      "alignment": -0.01666666666666672,
+      "half_trace_distance": 0.013553359244104335,
+      "esscher_magnetization": 0.059406965625267094,
+      "sandwich_magnetization": 0.086449544661658
+    },
+    {
+      "alignment": 0.0,
+      "half_trace_distance": 0.013549898358870008,
+      "esscher_magnetization": 0.07266701205284931,
+      "sandwich_magnetization": 0.09966799462495579
+    },
+    {
+      "alignment": 0.016666666666666607,
+      "half_trace_distance": 0.013542680079214135,
+      "esscher_magnetization": 0.08590681922162907,
+      "sandwich_magnetization": 0.11285135904300225
+    },
+    {
+      "alignment": 0.033333333333333215,
+      "half_trace_distance": 0.013531707243975557,
+      "esscher_magnetization": 0.09912644585526842,
+      "sandwich_magnetization": 0.1259997774212553
+    },
+    {
+      "alignment": 0.050000000000000044,
+      "half_trace_distance": 0.01351697954220256,
+      "esscher_magnetization": 0.1123259504454685,
+      "sandwich_magnetization": 0.13911338852655902
+    },
+    {
+      "alignment": 0.06666666666666665,
+      "half_trace_distance": 0.01349849349972965,
+      "esscher_magnetization": 0.12550539125311716,
+      "sandwich_magnetization": 0.15219233039202396
+    },
+    {
+      "alignment": 0.08333333333333326,
+      "half_trace_distance": 0.01347624245244799,
+      "esscher_magnetization": 0.13866482630942856,
+      "sandwich_magnetization": 0.16523674032187285
+    },
+    {
+      "alignment": 0.10000000000000009,
+      "half_trace_distance": 0.013450216505974135,
+      "esscher_magnetization": 0.15180431341707934,
+      "sandwich_magnetization": 0.17824675489624264
+    },
+    {
+      "alignment": 0.1166666666666667,
+      "half_trace_distance": 0.01342040248130202,
+      "esscher_magnetization": 0.16492391015133384,
+      "sandwich_magnetization": 0.19122250997595364
+    },
+    {
+      "alignment": 0.1333333333333333,
+      "half_trace_distance": 0.01338678384585984,
+      "esscher_magnetization": 0.17802367386116613,
+      "sandwich_magnetization": 0.2041641407072366
+    },
+    {
+      "alignment": 0.1499999999999999,
+      "half_trace_distance": 0.013349340629254443,
+      "esscher_magnetization": 0.1911036616703744,
+      "sandwich_magnetization": 0.21707178152642714
+    },
+    {
+      "alignment": 0.16666666666666674,
+      "half_trace_distance": 0.013308049322805337,
+      "esscher_magnetization": 0.20416393047868658,
+      "sandwich_magnetization": 0.22994556616461886
+    },
+    {
+      "alignment": 0.18333333333333335,
+      "half_trace_distance": 0.013262882761791212,
+      "esscher_magnetization": 0.21720453696286263,
+      "sandwich_magnetization": 0.2427856276522825
+    },
+    {
+      "alignment": 0.19999999999999996,
+      "half_trace_distance": 0.013213809989121725,
+      "esscher_magnetization": 0.23022553757778835,
+      "sandwich_magnetization": 0.2555920983238482
+    },
+    {
+      "alignment": 0.21666666666666656,
+      "half_trace_distance": 0.01316079609891679,
+      "esscher_magnetization": 0.2432269885575648,
+      "sandwich_magnetization": 0.2683651098222523
+    },
+    {
+      "alignment": 0.2333333333333334,
+      "half_trace_distance": 0.013103802058211652,
+      "esscher_magnetization": 0.25620894591658766,
+      "sandwich_magnetization": 0.281104793103447
+    },
+    {
+      "alignment": 0.25,
+      "half_trace_distance": 0.01304278450470302,
+      "esscher_magnetization": 0.2691714654506234,
+      "sandwich_magnetization": 0.29381127844087646
+    },
+    {
+      "alignment": 0.2666666666666666,
+      "half_trace_distance": 0.012977695518108628,
+      "esscher_magnetization": 0.28211460273787964,
+      "sandwich_magnetization": 0.30648469542991796
+    },
+    {
+      "alignment": 0.2833333333333332,
+      "half_trace_distance": 0.012908482362310207,
+      "esscher_magnetization": 0.2950384131400658,
+      "sandwich_magnetization": 0.3191251729922863
+    },
+    {
+      "alignment": 0.30000000000000004,
+      "half_trace_distance": 0.012835087194982803,
+      "esscher_magnetization": 0.3079429518034495,
+      "sandwich_magnetization": 0.3317328393804067
+    },
+    {
+      "alignment": 0.31666666666666665,
+      "half_trace_distance": 0.012757446740868015,
+      "esscher_magnetization": 0.3208282736599087,
+      "sandwich_magnetization": 0.34430782218175227
+    },
+    {
+      "alignment": 0.33333333333333326,
+      "half_trace_distance": 0.01267549192420524,
+      "esscher_magnetization": 0.33369443342797356,
+      "sandwich_magnetization": 0.3568502483231463
+    },
+    {
+      "alignment": 0.3500000000000001,
+      "half_trace_distance": 0.012589147455076905,
+      "esscher_magnetization": 0.3465414856138675,
+      "sandwich_magnetization": 0.369360244075036
+    },
+    {
+      "alignment": 0.3666666666666667,
+      "half_trace_distance": 0.012498331363516201,
+      "esscher_magnetization": 0.3593694845125351,
+      "sandwich_magnetization": 0.381837935055726
+    },
+    {
+      "alignment": 0.3833333333333333,
+      "half_trace_distance": 0.012402954474147698,
+      "esscher_magnetization": 0.372178484208671,
+      "sandwich_magnetization": 0.3942834462355865
+    },
+    {
+      "alignment": 0.3999999999999999,
+      "half_trace_distance": 0.012302919812832989,
+      "esscher_magnetization": 0.38496853857773783,
+      "sandwich_magnetization": 0.4066969019412232
+    },
+    {
+      "alignment": 0.41666666666666674,
+      "half_trace_distance": 0.012198121935228127,
+      "esscher_magnetization": 0.39773970128698466,
+      "sandwich_magnetization": 0.4190784258596189
+    },
+    {
+      "alignment": 0.43333333333333335,
+      "half_trace_distance": 0.012088446165260192,
+      "esscher_magnetization": 0.4104920257964475,
+      "sandwich_magnetization": 0.4314281410422391
+    },
+    {
+      "alignment": 0.44999999999999996,
+      "half_trace_distance": 0.01197376772920436,
+      "esscher_magnetization": 0.4232255653599597,
+      "sandwich_magnetization": 0.44374616990911125
+    },
+    {
+      "alignment": 0.46666666666666656,
+      "half_trace_distance": 0.011853950768204606,
+      "esscher_magnetization": 0.43594037302614186,
+      "sandwich_magnetization": 0.4560326342528687
+    },
+    {
+      "alignment": 0.4833333333333334,
+      "half_trace_distance": 0.011728847208555108,
+      "esscher_magnetization": 0.4486365016393972,
+      "sandwich_magnetization": 0.4682876552427639
+    },
+    {
+      "alignment": 0.5,
+      "half_trace_distance": 0.01159829546470005,
+      "esscher_magnetization": 0.46131400384089283,
+      "sandwich_magnetization": 0.48051135342865303
+    },
+    {
+      "alignment": 0.5166666666666666,
+      "half_trace_distance": 0.011462118944430319,
+      "esscher_magnetization": 0.4739729320695426,
+      "sandwich_magnetization": 0.4927038487449478
+    },
+    {
+      "alignment": 0.5333333333333332,
+      "half_trace_distance": 0.011320124318883937,
+      "esscher_magnetization": 0.4866133385629775,
+      "sandwich_magnetization": 0.5048652605145387
+    },
+    {
+      "alignment": 0.55,
+      "half_trace_distance": 0.011172099511196888,
+      "esscher_magnetization": 0.49923527535851564,
+      "sandwich_magnetization": 0.5169957074526872
+    },
+    {
+      "alignment": 0.5666666666666667,
+      "half_trace_distance": 0.011017811346479375,
+      "esscher_magnetization": 0.5118387942941236,
+      "sandwich_magnetization": 0.5290953076708883
+    },
+    {
+      "alignment": 0.5833333333333333,
+      "half_trace_distance": 0.010857002791344737,
+      "esscher_magnetization": 0.5244239470093738,
+      "sandwich_magnetization": 0.5411641786807044
+    },
+    {
+      "alignment": 0.6000000000000001,
+      "half_trace_distance": 0.010689389692420559,
+      "esscher_magnetization": 0.5369907849463955,
+      "sandwich_magnetization": 0.5532024373975704
+    },
+    {
+      "alignment": 0.6166666666666667,
+      "half_trace_distance": 0.010514656898542422,
+      "esscher_magnetization": 0.5495393593508209,
+      "sandwich_magnetization": 0.5652102001445664
+    },
+    {
+      "alignment": 0.6333333333333333,
+      "half_trace_distance": 0.010332453618461112,
+      "esscher_magnetization": 0.562069721272726,
+      "sandwich_magnetization": 0.5771875826561678
+    },
+    {
+      "alignment": 0.6499999999999999,
+      "half_trace_distance": 0.010142387821709741,
+      "esscher_magnetization": 0.574581921567564,
+      "sandwich_magnetization": 0.589134700081961
+    },
+    {
+      "alignment": 0.6666666666666667,
+      "half_trace_distance": 0.009944019430134758,
+      "esscher_magnetization": 0.5870760108970972,
+      "sandwich_magnetization": 0.6010516669903355
+    },
+    {
+      "alignment": 0.6833333333333333,
+      "half_trace_distance": 0.009736851964629341,
+      "esscher_magnetization": 0.5995520397303193,
+      "sandwich_magnetization": 0.6129385973721438
+    },
+    {
+      "alignment": 0.7,
+      "half_trace_distance": 0.009520322195479283,
+      "esscher_magnetization": 0.6120100583443762,
+      "sandwich_magnetization": 0.6247956046443386
+    },
+    {
+      "alignment": 0.7166666666666666,
+      "half_trace_distance": 0.009293787179507379,
+      "esscher_magnetization": 0.6244501168254781,
+      "sandwich_magnetization": 0.6366228016535782
+    },
+    {
+      "alignment": 0.7333333333333334,
+      "half_trace_distance": 0.009056507828000535,
+      "esscher_magnetization": 0.6368722650698095,
+      "sandwich_magnetization": 0.6484203006798072
+    },
+    {
+      "alignment": 0.75,
+      "half_trace_distance": 0.008807627796156533,
+      "esscher_magnetization": 0.6492765527844313,
+      "sandwich_magnetization": 0.6601882134398089
+    },
+    {
+      "alignment": 0.7666666666666666,
+      "half_trace_distance": 0.008546145951681211,
+      "esscher_magnetization": 0.6616630294881806,
+      "sandwich_magnetization": 0.6719266510907334
+    },
+    {
+      "alignment": 0.7833333333333332,
+      "half_trace_distance": 0.008270879855642847,
+      "esscher_magnetization": 0.6740317445125625,
+      "sandwich_magnetization": 0.6836357242335949
+    },
+    {
+      "alignment": 0.8,
+      "half_trace_distance": 0.007980416377764029,
+      "esscher_magnetization": 0.6863827470026388,
+      "sandwich_magnetization": 0.6953155429167482
+    },
+    {
+      "alignment": 0.8166666666666667,
+      "half_trace_distance": 0.007673043417430466,
+      "esscher_magnetization": 0.6987160859179098,
+      "sandwich_magnetization": 0.7069662166393333
+    },
+    {
+      "alignment": 0.8333333333333333,
+      "half_trace_distance": 0.00734665304274759,
+      "esscher_magnetization": 0.7110318100331946,
+      "sandwich_magnetization": 0.7185878543547006
+    },
+    {
+      "alignment": 0.8499999999999999,
+      "half_trace_distance": 0.006998599868396435,
+      "esscher_magnetization": 0.723329967939502,
+      "sandwich_magnetization": 0.7301805644738046
+    },
+    {
+      "alignment": 0.8666666666666667,
+      "half_trace_distance": 0.006625486391157629,
+      "esscher_magnetization": 0.7356106080448983,
+      "sandwich_magnetization": 0.7417444548685762
+    },
+    {
+      "alignment": 0.8833333333333333,
+      "half_trace_distance": 0.006222823061901787,
+      "esscher_magnetization": 0.7478737785753731,
+      "sandwich_magnetization": 0.7532796328752684
+    },
+    {
+      "alignment": 0.8999999999999999,
+      "half_trace_distance": 0.005784459950592026,
+      "esscher_magnetization": 0.7601195275756949,
+      "sandwich_magnetization": 0.7647862052977771
+    },
+    {
+      "alignment": 0.9166666666666667,
+      "half_trace_distance": 0.005301568215230264,
+      "esscher_magnetization": 0.7723479029102642,
+      "sandwich_magnetization": 0.7762642784109377
+    },
+    {
+      "alignment": 0.9333333333333333,
+      "half_trace_distance": 0.004760638363166687,
+      "esscher_magnetization": 0.7845589522639661,
+      "sandwich_magnetization": 0.7877139579637966
+    },
+    {
+      "alignment": 0.95,
+      "half_trace_distance": 0.004139001998136068,
+      "esscher_magnetization": 0.7967527231430082,
+      "sandwich_magnetization": 0.7991353491828592
+    },
+    {
+      "alignment": 0.9666666666666666,
+      "half_trace_distance": 0.0033926109597692718,
+      "esscher_magnetization": 0.8089292628757642,
+      "sandwich_magnetization": 0.8105285567753131
+    },
+    {
+      "alignment": 0.9833333333333334,
+      "half_trace_distance": 0.0024081726856037193,
+      "esscher_magnetization": 0.8210886186136059,
+      "sandwich_magnetization": 0.8218936849322289
+    },
+    {
+      "alignment": 1.0,
+      "half_trace_distance": 6.245004513516506e-17,
+      "esscher_magnetization": 0.8332308373317344,
+      "sandwich_magnetization": 0.8332308373317345
+    }
+  ],
+  "assertion_status": "passed"
+}
