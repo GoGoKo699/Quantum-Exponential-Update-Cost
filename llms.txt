@@ -14,6 +14,13 @@ This repository studies the independent-copy cost of producing one normalized Es
 - Attribution and closest operational comparisons: references/RELATED_WORK.md and references/references.bib.
 - Finite diagnostics, environment, commands and limits: verification/README.md, verification/checks.py and verification/results.json.
 
+## Learning route
+
+- Selected anchor: John Watrous, The Theory of Quantum Information (2018).
+- Entry and suggested reading route: learning/README.md.
+- Exact source sections, notation transfer and worked example: learning/WATROUS_BRIDGE.md.
+- Complete project-defined map: learning/MILESTONES.md, M01–M30,12background and18narrative.
+
 ## Essential distinctions
 
 - Esscher updating differs from sandwich filtering on noncommuting priors.
