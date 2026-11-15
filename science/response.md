@@ -6,7 +6,7 @@ Throughout, logarithms are natural. For a positive definite density operator $\r
 
 $$
 \mathcal E_H(\rho)
-=\frac{\exp(\log\rho+H)}{\operatorname{Tr}\exp(\log\rho+H)}.
+=\frac{\exp(\log\rho+H)}{\mathrm{Tr}\exp(\log\rho+H)}.
 $$
 
 No oracle for $\log\rho$ is assumed. This expression defines the desired output state.
@@ -16,7 +16,7 @@ No oracle for $\log\rho$ is assumed. This expression defines the desired output 
 Let $D\ge 2$ be even and fix
 
 $$
-Z=\operatorname{diag}(\underbrace{1,\ldots,1}_{D/2},
+Z=\mathrm{diag}(\underbrace{1,\ldots,1}_{D/2},
 \underbrace{-1,\ldots,-1}_{D/2}).
 $$
 
@@ -32,7 +32,7 @@ The eigenvalues of every $\rho_U$ are $(1+a)/D$ and $(1-a)/D$, each with multipl
 The evidence is the known operator $H=hZ$. Its norm is $h$, independent of $D$. The statistic of interest is one fixed output observable:
 
 $$
-m_U(t)=\operatorname{Tr}\!\left[Z\mathcal E_{tZ}(\rho_U)\right].
+m_U(t)=\mathrm{Tr}\!\left[Z\mathcal E_{tZ}(\rho_U)\right].
 $$
 
 For the maximally mixed prior, the answer is explicit:
@@ -48,7 +48,7 @@ We use Haar-random $U$ only as a lower-bound distribution. An update algorithm i
 **Lemma 1 (partition-function derivatives).** Let $A$ and $Z$ be finite-dimensional Hermitian matrices with $\|Z\|\le1$, and put
 
 $$
-F(t)=\operatorname{Tr}e^{A+tZ},\qquad m(t)=\frac{F'(t)}{F(t)}.
+F(t)=\mathrm{Tr}e^{A+tZ},\qquad m(t)=\frac{F'(t)}{F(t)}.
 $$
 
 For every real $t$ and every integer $k\ge1$,
@@ -67,14 +67,14 @@ $$
 
 $$
 F^{(k)}(t)=k!\int_{\Delta_k}
-\operatorname{Tr}\!\left(e^{s_0K}Z e^{s_1K}Z\cdots Z e^{s_kK}\right)ds,
+\mathrm{Tr}\!\left(e^{s_0K}Z e^{s_1K}Z\cdots Z e^{s_kK}\right)ds,
 $$
 
 where $\Delta_k=\{(s_0,\ldots,s_k):s_j\ge0,\sum_js_j=1\}$ has volume $1/k!$ in the usual $k$ independent coordinates. Schatten Holder bounds every integrand in magnitude by
 
 $$
 \prod_{j=0}^k\|e^{s_jK}\|_{1/s_j}\,\|Z\|^k
-\le\prod_{j=0}^k(\operatorname{Tr}e^K)^{s_j}
+\le\prod_{j=0}^k(\mathrm{Tr}e^K)^{s_j}
 =F(t).
 $$
 
@@ -104,7 +104,7 @@ $$
 c(a)=\frac12+\frac{a}{\log((1+a)/(1-a))}.
 $$
 
-Because $\operatorname{atanh}a>a$ for $0<a<1$, one has $1/2<c(a)<1$.
+Because $\mathrm{atanh}a>a$ for $0<a<1$, one has $1/2<c(a)<1$.
 
 **Lemma 2 (finite-dimensional Haar response).** For every even $D\ge2$,
 
@@ -117,11 +117,11 @@ $$
 
 Moreover, $\overline m(t)$ is an odd function of $t$.
 
-**Proof.** If $\rho$ has eigenvalues $p_i>0$, Duhamel differentiation of $\operatorname{Tr}e^{\log\rho+tZ}$ gives
+**Proof.** If $\rho$ has eigenvalues $p_i>0$, Duhamel differentiation of $\mathrm{Tr}e^{\log\rho+tZ}$ gives
 
 $$
-m'(0)=\int_0^1\operatorname{Tr}(\rho^{1-s}Z\rho^sZ)\,ds
--(\operatorname{Tr}\rho Z)^2.
+m'(0)=\int_0^1\mathrm{Tr}(\rho^{1-s}Z\rho^sZ)\,ds
+-(\mathrm{Tr}\rho Z)^2.
 $$
 
 In an eigenbasis of $\rho$, this becomes
@@ -143,7 +143,7 @@ $$
 \mathbb E(W\otimes W)=\frac{D\mathsf S-I}{D^2-1},
 $$
 
-where $\mathsf S$ swaps the two factors. To obtain this identity, unitary invariance restricts the average to a linear combination of $I$ and $\mathsf S$; the equations $\operatorname{Tr}Z=0$ and $\operatorname{Tr}Z^2=D$ determine the coefficients. Consequently,
+where $\mathsf S$ swaps the two factors. To obtain this identity, unitary invariance restricts the average to a linear combination of $I$ and $\mathsf S$; the equations $\mathrm{Tr}Z=0$ and $\mathrm{Tr}Z^2=D$ determine the coefficients. Consequently,
 
 $$
 \mathbb E|W_{ii}|^2=\frac1{D+1},\qquad
@@ -184,8 +184,8 @@ The preceding calculation concerns a derivative, but the lower bound needs a fix
 **Proposition 3 (fixed-update response gap).** For every $0<a<1$, $h\ge0$, and even $D\ge2$,
 
 $$
-\operatorname{Tr}[Z\mathcal E_{hZ}(\rho_0)]
--\mathbb E_U\operatorname{Tr}[Z\mathcal E_{hZ}(\rho_U)]
+\mathrm{Tr}[Z\mathcal E_{hZ}(\rho_0)]
+-\mathbb E_U\mathrm{Tr}[Z\mathcal E_{hZ}(\rho_U)]
 \ge g(a,h),
 $$
 

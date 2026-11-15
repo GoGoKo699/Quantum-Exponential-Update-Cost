@@ -13,10 +13,10 @@ $$
 Because $K^\dagger K=\exp(H-hI)\le I$, this is a valid two-outcome instrument. Its success probability and accepted state are
 
 $$
-p_H(\rho)=\operatorname{Tr}(e^{H-hI}\rho)\ge e^{-2h},
+p_H(\rho)=\mathrm{Tr}(e^{H-hI}\rho)\ge e^{-2h},
 \qquad
 \mathcal F_H(\rho)=
-\frac{e^{H/2}\rho e^{H/2}}{\operatorname{Tr}(e^H\rho)}.
+\frac{e^{H/2}\rho e^{H/2}}{\mathrm{Tr}(e^H\rho)}.
 $$
 
 The filter consumes one input copy per attempt. Repeating on fresh copies until success uses at most $e^{2h}$ copies in expectation. With a hard cap of $r$ attempts, output a fixed fallback state if all fail. The unconditional output then has half-trace distance at most
@@ -55,9 +55,9 @@ For a classical source with probabilities $p(x)$ and evaluable bounded tilt $H(x
 For general inputs the two maps differ:
 
 $$
-\mathcal E_H(\rho)=\frac{e^{\log\rho+H}}{\operatorname{Tr}e^{\log\rho+H}},
+\mathcal E_H(\rho)=\frac{e^{\log\rho+H}}{\mathrm{Tr}e^{\log\rho+H}},
 \qquad
-\mathcal F_H(\rho)=\frac{e^{H/2}\rho e^{H/2}}{\operatorname{Tr}(e^H\rho)}.
+\mathcal F_H(\rho)=\frac{e^{H/2}\rho e^{H/2}}{\mathrm{Tr}(e^H\rho)}.
 $$
 
 Their classical coincidence is inherited; it is not a proposed matrix identity for noncommuting operators. The [finite checks](../verification/README.md) include a direct noncommuting counterexample and commuting controls. The copy lower bound applies to $\mathcal E_H$, while the construction above implements $\mathcal F_H$.
@@ -67,9 +67,9 @@ Their classical coincidence is inherited; it is not a proposed matrix identity f
 In the [converse](copy_lower_bound.md), all inputs have the same supplied spectrum. In the commuting ensemble, $S$ is block diagonal in the two eigenspaces of $Z$, with a balanced involution in each block. Consequently
 
 $$
-\operatorname{Tr}(\rho_S Z)=0,
+\mathrm{Tr}(\rho_S Z)=0,
 \qquad
-\operatorname{Tr}\!\left(Z\mathcal E_{hZ}(\rho_S)\right)=\tanh h.
+\mathrm{Tr}\!\left(Z\mathcal E_{hZ}(\rho_S)\right)=\tanh h.
 $$
 
 A fully Haar-oriented state has a smaller mean Esscher response. The ordinary filter has no such mean obstruction: it can be applied to either ensemble using the same constant-copy instrument. The theorem distinguishes two update operations and two orientation regimes, rather than declaring all quantum inference expensive.

@@ -5,7 +5,7 @@
 This project proves a dimension-dependent obstruction for the normalized Esscher update
 
 $$
-\mathcal E_H(\rho)=\frac{e^{\log\rho+H}}{\operatorname{Tr}e^{\log\rho+H}}.
+\mathcal E_H(\rho)=\frac{e^{\log\rho+H}}{\mathrm{Tr}e^{\log\rho+H}}.
 $$
 
 Even when the **exact spectrum is supplied**, producing one updated state can require $\Omega(D)$ input copies in dimension $D$. The hard inputs are full rank, have eigenvalue ratio nine, and all share the same two-level spectrum. The tilt is the fixed known one-qubit operator $H=0.1Z_1$; the target half-trace error is $0.001$.
@@ -24,7 +24,7 @@ For $q\ge2$ qubits, $D=2^q$, so this is an exponential copy cost. The processor 
 
 The quadratic collective upper bound and linear lower bound leave an open gap. The constructive methods charge tomography, dense classical processing and final state preparation; no QRAM, preparation inverse or modular-Hamiltonian oracle is supplied. [Upper bounds](science/upper_bounds.md) distinguish copy complexity from implementation costs.
 
-Ordinary filtering produces $e^{H/2}\rho e^{H/2}/\operatorname{Tr}(e^H\rho)$. It agrees with the Esscher update on commuting inputs and remains inexpensive on general inputs. [The two operations](science/baselines.md) differ for noncommuting states.
+Ordinary filtering produces $e^{H/2}\rho e^{H/2}/\mathrm{Tr}(e^H\rho)$. It agrees with the Esscher update on commuting inputs and remains inexpensive on general inputs. [The two operations](science/baselines.md) differ for noncommuting states.
 
 ## Read the science
 

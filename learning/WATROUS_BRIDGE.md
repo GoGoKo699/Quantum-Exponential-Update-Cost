@@ -53,14 +53,14 @@ The desired normalized exponential update is
 
 $$
 \mathcal E_H(\rho)=
-\frac{e^{\log\rho+H}}{\operatorname{Tr}e^{\log\rho+H}}.
+\frac{e^{\log\rho+H}}{\mathrm{Tr}e^{\log\rho+H}}.
 $$
 
 The ordinary sandwich filter produces
 
 $$
 \mathcal F_H(\rho)=
-\frac{e^{H/2}\rho e^{H/2}}{\operatorname{Tr}(e^H\rho)}.
+\frac{e^{H/2}\rho e^{H/2}}{\mathrm{Tr}(e^H\rho)}.
 $$
 
 For commuting $\rho$ and $H$, the matrix identity $e^{\log\rho+H}=e^H\rho$ makes the outputs equal. Outside that regime, changing the order of matrix operations changes the answer. Both outputs are valid states, but only the first solves the specified task.
@@ -85,7 +85,7 @@ The prior has eigenvalues $0.9$ and $0.1$. Its polarization points along $X$, wh
 Put
 
 $$
-b=\operatorname{atanh}(0.8)=\tfrac12\log9,
+b=\mathrm{atanh}(0.8)=\tfrac12\log9,
 \qquad s=\sqrt{b^2+0.1^2}.
 $$
 
@@ -116,9 +116,9 @@ $$
 Measuring $Z$ on either ideal output gives outcomes $+1$ and $-1$. Their predicted means are
 
 $$
-\operatorname{Tr}[Z\mathcal E_H(\rho)]\approx0.072667012053,
+\mathrm{Tr}[Z\mathcal E_H(\rho)]\approx0.072667012053,
 \qquad
-\operatorname{Tr}[Z\mathcal F_H(\rho)]\approx0.099667994625.
+\mathrm{Tr}[Z\mathcal F_H(\rho)]\approx0.099667994625.
 $$
 
 For qubit states, half trace distance is half the Euclidean distance between their Bloch vectors. Here it is
@@ -175,7 +175,7 @@ The main family is
 
 $$
 \rho_S=\frac{I+0.8S}{D},\qquad
-S=S^\dagger,\quad S^2=I,\quad\operatorname{Tr}S=0.
+S=S^\dagger,\quad S^2=I,\quad\mathrm{Tr}S=0.
 $$
 
 Every input has eigenvalues $1.8/D$ and $0.2/D$, each repeated $D/2$ times. The processor is told that exact spectrum. The evidence is the fixed operator $H=0.1Z$, with $Z$ balanced between its two eigenspaces.
@@ -203,9 +203,9 @@ Three research ingredients connect these foundations to the theorem. They are su
 First, differentiating the normalized exponential along $tZ$ gives the response
 
 $$
-\left.\frac{d}{dt}\operatorname{Tr}[Z\mathcal E_{tZ}(\rho)]\right|_{t=0}
-=\int_0^1\operatorname{Tr}(\rho^{1-s}Z\rho^sZ)\,ds
--(\operatorname{Tr}\rho Z)^2.
+\left.\frac{d}{dt}\mathrm{Tr}[Z\mathcal E_{tZ}(\rho)]\right|_{t=0}
+=\int_0^1\mathrm{Tr}(\rho^{1-s}Z\rho^sZ)\,ds
+-(\mathrm{Tr}\rho Z)^2.
 $$
 
 This is the Bogoliubov–Kubo–Mori susceptibility. In an eigenbasis its matrix weights are logarithmic means. The [response account](../science/response.md) derives it by Duhamel differentiation, computes the exact Haar second moment, and controls the remainder uniformly in dimension. That last step turns an infinitesimal response into a gap at the fixed tilt $0.1$.

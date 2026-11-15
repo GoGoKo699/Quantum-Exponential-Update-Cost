@@ -26,7 +26,7 @@ For a fixed $h>0$, the required output is
 
 $$
 \mathcal E_{hZ}(\rho)
-=\frac{e^{\log\rho+hZ}}{\operatorname{Tr}e^{\log\rho+hZ}}.
+=\frac{e^{\log\rho+hZ}}{\mathrm{Tr}e^{\log\rho+hZ}}.
 $$
 
 The input interface supplies copies and the stated classical information. It supplies no matrix description, purification oracle, inverse preparation oracle, block encoding, or modular-evolution oracle for $\rho$. The lower bound allows unlimited processing of the copies and the known evidence, so it does not rely on a gate-complexity assumption.
@@ -140,13 +140,13 @@ Since $m$ is even, this definition is valid. The operator $S_{\mathrm C}$ has $D
 
 $$
 [\rho_{\mathrm C},Z]=0,\qquad
-\operatorname{Tr}(\rho_{\mathrm C}Z)=0.
+\mathrm{Tr}(\rho_{\mathrm C}Z)=0.
 $$
 
 It follows for every draw of $V_+,V_-$ that
 
 $$
-\operatorname{Tr}\!\left[Z\mathcal E_{hZ}(\rho_{\mathrm C})\right]
+\mathrm{Tr}\!\left[Z\mathcal E_{hZ}(\rho_{\mathrm C})\right]
 =\tanh h.
 $$
 
@@ -311,7 +311,7 @@ The result is not a claim that every quantum update is expensive. The measuremen
 
 $$
 \mathcal L_H(\rho)
-=\frac{e^{H/2}\rho e^{H/2}}{\operatorname{Tr}(e^H\rho)}
+=\frac{e^{H/2}\rho e^{H/2}}{\mathrm{Tr}(e^H\rho)}
 $$
 
 has a direct probabilistic implementation with expected copy cost bounded in terms of $\|H\|$ alone. It is exactly $\mathcal E_H(\rho)$ whenever $[\rho,H]=0$, and implementing that filter does not require knowing the input eigenbasis. Classical exponential tilting similarly admits rejection sampling from the prior for known bounded evidence. The distinction established here is the copy cost of the noncommuting minimum-relative-entropy update.

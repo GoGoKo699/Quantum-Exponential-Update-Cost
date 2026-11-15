@@ -7,14 +7,14 @@ A bounded change of a classical probability distribution can be sampled by accep
 For a positive definite density operator $\rho$ and known Hermitian tilt $H$, define
 
 $$
-\mathcal E_H(\rho)=\frac{\exp(\log\rho+H)}{\operatorname{Tr}\exp(\log\rho+H)}.
+\mathcal E_H(\rho)=\frac{\exp(\log\rho+H)}{\mathrm{Tr}\exp(\log\rho+H)}.
 $$
 
-All logarithms in this account are natural. The input and output have the same dimension. Writing $Z_H(\rho)=\operatorname{Tr}\exp(\log\rho+H)$, the identity
+All logarithms in this account are natural. The input and output have the same dimension. Writing $Z_H(\rho)=\mathrm{Tr}\exp(\log\rho+H)$, the identity
 
 $$
 D(\sigma\Vert\mathcal E_H(\rho))
-=D(\sigma\Vert\rho)-\operatorname{Tr}(H\sigma)+\log Z_H(\rho)
+=D(\sigma\Vert\rho)-\mathrm{Tr}(H\sigma)+\log Z_H(\rho)
 $$
 
 shows that the target uniquely minimizes the relative-entropy objective on the right. This variational interpretation and the Esscher map are inherited from [Qiu, Koor and Rebentrost](../references/RELATED_WORK.md#the-quantum-esscher-transform). The present task supplies the tilt itself; finding a Lagrange multiplier from an imposed expectation constraint is a different problem.
@@ -38,7 +38,7 @@ The unknown state belongs to
 
 $$
 \rho_S=\frac{I+aS}{D},\qquad
-S=S^\dagger,\quad S^2=I,\quad \operatorname{Tr}S=0.
+S=S^\dagger,\quad S^2=I,\quad \mathrm{Tr}S=0.
 $$
 
 The processor is supplied with this **exact eigenvalue multiset**: $(1+a)/D$ and $(1-a)/D$, each with multiplicity $D/2$. Thus every input has full rank, ordinary spectral condition number nine and the same entropy. Only the eigenspaces, or equivalently the orientation $S$, are unknown. The lower bound does not charge the processor for learning an unknown spectrum.

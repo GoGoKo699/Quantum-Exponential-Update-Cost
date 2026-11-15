@@ -13,7 +13,7 @@ $$
 Let $H$ be a supplied classical description of a Hermitian matrix with $\|H\|_\infty\leq h$. In the lower-bound example, $H$ is a fixed multiple of a known one-qubit Pauli operator, so its description and implementation do not grow with $D$ apart from identifying the register. Define
 
 $$
-\mathcal T_H(\rho)=\frac{\exp(\log\rho+H)}{\operatorname{Tr}\exp(\log\rho+H)}.
+\mathcal T_H(\rho)=\frac{\exp(\log\rho+H)}{\mathrm{Tr}\exp(\log\rho+H)}.
 $$
 
 Trace distance means $\tfrac12\|A-B\|_1$. The final physical state includes averaging over the algorithm's measurement outcomes and classical randomness. No preparation circuit for the unknown source, inverse circuit, modular Hamiltonian, eigenbasis or QRAM is supplied.
@@ -51,10 +51,10 @@ $$
 \leq(C/c)e^h\|\rho-\sigma\|_1.
 $$
 
-The normalizing traces are in $[e^{-h},e^h]$, by eigenvalue monotonicity applied to $\log\rho-hI\preceq A\preceq\log\rho+hI$ and its counterpart for $B$. For positive matrices $X,Y$ with $\operatorname{Tr}X\geq e^{-h}$,
+The normalizing traces are in $[e^{-h},e^h]$, by eigenvalue monotonicity applied to $\log\rho-hI\preceq A\preceq\log\rho+hI$ and its counterpart for $B$. For positive matrices $X,Y$ with $\mathrm{Tr}X\geq e^{-h}$,
 
 $$
-\left\|\frac X{\operatorname{Tr}X}-\frac Y{\operatorname{Tr}Y}\right\|_1
+\left\|\frac X{\mathrm{Tr}X}-\frac Y{\mathrm{Tr}Y}\right\|_1
 \leq2e^h\|X-Y\|_1.
 $$
 
@@ -65,7 +65,7 @@ Combining these inequalities proves the claim. No commutativity is used. $\squar
 Let
 
 $$
-\mathcal K=\{\tau:\operatorname{Tr}\tau=1,\ (c/D)I\preceq\tau\preceq(C/D)I\}.
+\mathcal K=\{\tau:\mathrm{Tr}\tau=1,\ (c/D)I\preceq\tau\preceq(C/D)I\}.
 $$
 
 Given a Hermitian estimate $A$, choose $\widehat\rho\in\mathcal K$ minimizing $\|\widehat\rho-A\|_1$. Because the true state is feasible,
@@ -113,7 +113,7 @@ X=(D+1)|\phi\rangle\langle\phi|-I,
 \qquad\mathbb E X=\rho.
 $$
 
-The Clifford second-moment identity supplies unbiasedness. Also $\operatorname{Tr}X^2=D^2+D-1$ for every outcome, so the empirical average $A=N^{-1}\sum_jX_j$ satisfies
+The Clifford second-moment identity supplies unbiasedness. Also $\mathrm{Tr}X^2=D^2+D-1$ for every outcome, so the empirical average $A=N^{-1}\sum_jX_j$ satisfies
 
 $$
 \mathbb E\|A-\rho\|_F^2\leq\frac{D^2+D-1}{N}.

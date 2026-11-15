@@ -5,7 +5,7 @@
 The operation studied here is the normalized exponential update
 
 $$
-\mathcal E_H(\rho)=\frac{\exp(\log\rho+H)}{\operatorname{Tr}\exp(\log\rho+H)}.
+\mathcal E_H(\rho)=\frac{\exp(\log\rho+H)}{\mathrm{Tr}\exp(\log\rho+H)}.
 $$
 
 The question is how many independent copies of a prior state are required to produce one updated state when its exact two-level spectrum is supplied and its orientation is unknown. An input preparation unitary, its inverse, a purification, and a block encoding are stronger access resources; they are not supplied by this copy model.

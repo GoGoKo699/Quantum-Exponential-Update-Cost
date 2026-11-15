@@ -63,13 +63,13 @@ The allocation is **12 background milestones and 18 narrative milestones**. The 
 - **Central question:** How are $\log\rho$ and $e^A$ defined, and why does operator order matter?
 - **Understanding target:** Read matrix functions through a spectral decomposition. Distinguish a scalar identity shift, which cancels after normalization, from a noncommuting operator contribution, which cannot be rearranged as if it were a number.
 - **Dependencies and story role:** Uses M01; introduces the mathematical operation defining the desired output.
-- **Conceptual connection:** For the two-level family, $\log\rho_S$ is a scalar identity term plus $(\operatorname{atanh}a)S$. Removing the scalar does not supply the unknown operator $S$.
+- **Conceptual connection:** For the two-level family, $\log\rho_S$ is a scalar identity term plus $(\mathrm{atanh}a)S$. Removing the scalar does not supply the unknown operator $S$.
 - **Source pointers:** Watrous, Chapter 1; [model: normalized Esscher update](../science/model.md#the-normalized-esscher-update); [response: family and observable](../science/response.md#the-family-and-the-observable); [finite diagnostics](../verification/README.md).
 
 ### M07 — Why this exponential update is an inference target
 
 - **Central question:** Which optimization problem selects the normalized Esscher state?
-- **Understanding target:** Interpret the identity involving $D(\sigma\Vert\rho)-\operatorname{Tr}(H\sigma)$ and explain why normalization produces the unique minimum-relative-entropy update for a supplied tilt.
+- **Understanding target:** Interpret the identity involving $D(\sigma\Vert\rho)-\mathrm{Tr}(H\sigma)$ and explain why normalization produces the unique minimum-relative-entropy update for a supplied tilt.
 - **Dependencies and story role:** Uses M05–M06; gives the target an operational and variational purpose.
 - **Conceptual connection:** The tilt $H$ is supplied. Solving for a multiplier from a prescribed expectation constraint is a separate task.
 - **Source pointers:** Watrous, Chapter 5; [model: normalized Esscher update](../science/model.md#the-normalized-esscher-update); [related work: quantum Esscher transform](../references/RELATED_WORK.md#the-quantum-esscher-transform).
