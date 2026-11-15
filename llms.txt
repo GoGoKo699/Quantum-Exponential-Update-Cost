@@ -1,0 +1,25 @@
+# Quantum Exponential Update Cost
+
+This repository studies the independent-copy cost of producing one normalized Esscher update exp(log rho+H)/Tr. The main lower theorem uses a fixed known one-qubit tilt, fixed output error and identical supplied exact spectra; unknown orientation remains.
+
+## Reader routes
+
+- Story and principal costs: README.md, then science/interpretation.md.
+- Precise theorem and resource contract: science/model.md.
+- Decisive calculation: science/response.md.
+- Full lower proof, exact Schur/flag transfer and success conventions: science/copy_lower_bound.md.
+- Easy commuting and general sandwich-filter construction: science/baselines.md.
+- Constructive collective and single-copy upper bounds, stability and paid implementation: science/upper_bounds.md.
+- Connected reading route: science/README.md.
+- Attribution and closest operational comparisons: references/RELATED_WORK.md and references/references.bib.
+- Finite diagnostics, environment, commands and limits: verification/README.md, verification/checks.py and verification/results.json.
+
+## Essential distinctions
+
+- Esscher updating differs from sandwich filtering on noncommuting priors.
+- The main theorem furnishes the actual two-level spectrum; hardness concerns orientation.
+- Lower cost is Omega(D); collective upper cost is O(D^2) at fixed parameters. No matching law or efficient collective-POVM gate claim is made.
+- The two-spectrum maxmix comparator is an intermediate proposition with a different numerical constant.
+- Trace distance is half the trace norm; outputs are normalized state marginals, including the processor's classical randomness.
+- Source copies do not include purification, preparation inverse, eigenbasis or modular dynamics.
+- Finite checks support only their tested cases; general statements use the linked analytical arguments.
